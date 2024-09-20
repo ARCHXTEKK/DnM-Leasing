@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: local("Inter"), url("/assets/fonts/Inter.woff") format("woff"),
+    url("/assets/fonts/Inter.ttf") format("ttf");
+}
 
 html {
   box-sizing: border-box;
@@ -91,10 +95,33 @@ body {
 .menu__list-link {
   text-transform: uppercase;
   font-weight: 700;
+  position: relative;
+}
+
+.menu__list-link:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  content: "";
+  background-color: #ffffff;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.menu__list-link:hover:after {
+  transform: scaleX(1);
+  transition: transform 0.2s ease;
 }
 
 .menu__list-link--active {
   color: #0066ff;
+}
+
+.menu__list-link--active:after {
+  background-color: #0066ff;
 }
 
 .footer {
@@ -170,6 +197,12 @@ body {
   text-transform: uppercase;
   font-size: 36px;
   font-weight: 700;
+
+  transition: background-color 0.2s ease;
+}
+
+.hero__link:hover {
+  background: #222121;
 }
 
 .swiper-slide {
@@ -354,6 +387,42 @@ body {
   line-height: 130%;
 }
 
+.form__input::-webkit-input-placeholder,
+.form__textarea::-webkit-input-placeholder {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #151515;
+  line-height: 130%;
+  opacity: 0.5;
+}
+
+.form__input::-moz-placeholder,
+.form__textarea::-moz-placeholder {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #151515;
+  line-height: 130%;
+  opacity: 0.5;
+}
+
+.form__input:-ms-input-placeholder,
+.form__textarea:-ms-input-placeholder {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #151515;
+  line-height: 130%;
+  opacity: 0.5;
+}
+
+.form__input::-ms-input-placeholder,
+.form__textarea::-ms-input-placeholder {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #151515;
+  line-height: 130%;
+  opacity: 0.5;
+}
+
 .form__input::placeholder,
 .form__textarea::placeholder {
   font-family: "Inter", sans-serif;
@@ -394,6 +463,12 @@ body {
   line-height: 130%;
 
   cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.form__btn:hover {
+  background: #222121;
 }
 
 .blog {
@@ -428,7 +503,14 @@ body {
   color: #fff;
   padding: 4px 20.5px;
   cursor: pointer;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
+  transition: background-color 0.2s ease;
+}
+
+.blog__item-link:hover {
+  background: #0084ff;
 }
 
 .showmore-link {
@@ -446,6 +528,12 @@ body {
   line-height: 130%;
   cursor: pointer;
   display: block;
+
+  transition: background-color 0.2s ease;
+}
+
+.showmore-link:hover {
+  background: #222121;
 }
 
 .choose {
@@ -478,6 +566,7 @@ body {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 40px;
   column-gap: 40px;
   row-gap: 100px;
 }
@@ -508,7 +597,13 @@ body {
   display: block;
   width: 100%;
   text-align: center;
+  transition: color 0.1s ease, background-color 0.1s ease;
   padding-block: 2px;
+}
+
+.product-grid__item-link:hover {
+  background: #0066ff;
+  color: #fff;
 }
 
 .product-grid__item-img {
@@ -542,6 +637,22 @@ body {
   background-color: #fff;
 }
 
+.footer__menu-link {
+  transition: color 0.2s ease;
+}
+
+.footer__menu-link:hover {
+  color: #0066ff;
+}
+
+.copy__nav-link {
+  transition: color 0.2s ease;
+}
+
+.copy__nav-link:hover {
+  color: #0066ff;
+}
+
 @media screen and (max-width: 1240px) {
   .important__list {
     display: grid;
@@ -562,7 +673,10 @@ body {
   }
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
+    -moz-column-gap: 40px;
     column-gap: 40px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     margin-inline: auto;
   }
@@ -680,6 +794,7 @@ body {
     margin-inline: auto;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 40px;
+    -moz-column-gap: 40px;
     column-gap: 40px;
   }
 
