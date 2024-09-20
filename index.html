@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="vendors/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-min.css">
 
 </head>
 
@@ -60,10 +60,18 @@
         <div class="swiper">
           <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide" style="background-image: url(assets/images/slide-1.jpg)"></div>
-            <div class="swiper-slide" style="background-image: url(assets/images/slide-2.jpg)"></div>
-            <div class="swiper-slide" style="background-image: url(assets/images/slide-1.jpg)"></div>
-            <div class="swiper-slide" style="background-image: url(assets/images/slide-2.jpg)"></div>
+            <div class="swiper-slide"
+              style="background-image: image-set(url(assets/images/slide-1.jpg) type('image/jpeg'), url(assets/images/avif/slide-1.avif) type('image/avif'), url(assets/images/webp/slide-1.webp) type('image/webp'))">
+            </div>
+            <div class="swiper-slide"
+              style="background-image: image-set(url(assets/images/slide-2.jpg) type('image/jpeg'), url(assets/images/avif/slide-2.avif) type('image/avif'), url(assets/images/webp/slide-2.webp) type('image/webp'))">
+            </div>
+            <div class="swiper-slide"
+              style="background-image: image-set(url(assets/images/slide-1.jpg) type('image/jpeg'), url(assets/images/avif/slide-1.avif) type('image/avif'), url(assets/images/webp/slide-1.webp) type('image/webp'))">
+            </div>
+            <div class="swiper-slide"
+              style="background-image: image-set(url(assets/images/slide-2.jpg) type('image/jpeg'), url(assets/images/avif/slide-2.avif) type('image/avif'), url(assets/images/webp/slide-2.webp) type('image/webp'))">
+            </div>
             ...
           </div>
           <!-- If we need pagination -->
@@ -178,25 +186,41 @@
           </p>
           <ul class="important__list">
             <li class="important__list-item">
-              <img src="assets/images/important-1.jpg" alt="car" class="important__list-img">
+              <picture>
+                <source srcset="assets/images/avif/important-1.avif" type="image/avif">
+                <source srcset="assets/images/webp/important-1.webp" type="image/webp">
+                <img src="assets/images/important-1.jpg" alt="car" class="important__list-img" loading="lazy">
+              </picture>
               <p class="important__list-text">
                 Monthly payments on leases are generally 20% - 30% cheaper than loans
               </p>
             </li>
             <li class="important__list-item">
-              <img src="assets/images/important-2.jpg" alt="car" class="important__list-img">
+              <picture>
+                <source srcset="assets/images/avif/important-2.avif" type="image/avif">
+                <source srcset="assets/images/webp/important-2.webp" type="image/webp">
+                <img src="assets/images/important-2.jpg" alt="car" class="important__list-img" loading="lazy">
+              </picture>
               <p class="important__list-text">
                 You may be eligible for a tax break if you use the leased vehicle for business purposes
               </p>
             </li>
             <li class="important__list-item">
-              <img src="assets/images/important-3.jpg" alt="car" class="important__list-img">
+              <picture>
+                <source srcset="assets/images/avif/important-3.avif" type="image/avif">
+                <source srcset="assets/images/webp/important-3.webp" type="image/webp">
+                <img src="assets/images/important-3.jpg" alt="car" class="important__list-img" loading="lazy">
+              </picture>
               <p class="important__list-text">
                 Easy to upgrade to the newest vehicle model every few years
               </p>
             </li>
             <li class="important__list-item">
-              <img src="assets/images/important-4.jpg" alt="car" class="important__list-img">
+              <picture>
+                <source srcset="assets/images/avif/important-4.avif" type="image/avif">
+                <source srcset="assets/images/webp/important-4.webp" type="image/webp">
+                <img src="assets/images/important-4.jpg" alt="car" class="important__list-img" loading="lazy">
+              </picture>
               <p class="important__list-text">
                 There are often fees charged if you drive more than your lease's mileage allowance
               </p>
@@ -286,7 +310,7 @@
   </div>
 
   <script src="vendors/swiper-bundle.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main-min.js"></script>
 </body>
 
 </html>

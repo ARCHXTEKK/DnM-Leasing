@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-min.css">
 </head>
 
 <body>
@@ -61,12 +61,20 @@
           <div class="blog__inner">
             <ul class="blog__list">
               <li class="blog__item">
-                <img src="assets/images/blog-1.jpg" alt="" class="blog__item-img">
+                <picture>
+                  <source srcset="assets/images/avif/blog-1.avif" type="image/avif">
+                  <source srcset="assets/images/webp/blog-1.webp" type="image/webp">
+                  <img src="assets/images/blog-1.jpg" alt="" class="blog__item-img" loading="lazy">
+                </picture>
                 <h4 class="blog__item-title">An easier way to buy your next Toyota</h4>
                 <a class="blog__item-link">more</a>
               </li>
               <li class="blog__item">
-                <img src="assets/images/blog-2.jpg" alt="" class="blog__item-img">
+                <picture>
+                  <source srcset="assets/images/avif/blog-2.avif" type="image/avif">
+                  <source srcset="assets/images/webp/blog-2.webp" type="image/webp">
+                  <img src="assets/images/blog-2.jpg" alt="" class="blog__item-img" loading="lazy">
+                </picture>
                 <h4 class="blog__item-title">An easier way to buy your next Toyota</h4>
                 <a class="blog__item-link">more</a>
               </li>
@@ -156,7 +164,7 @@
       </div>
     </footer>
   </div>
-  <script src="js/main.js"> </script>
+  <script src="js/main-min.js"> </script>
 </body>
 
 </html>
